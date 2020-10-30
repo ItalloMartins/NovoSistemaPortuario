@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Add User</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/shards.min.css">
+    </head>
+    <body>        	
+    	<div class="card">
+        		<div class="card-body">
+                    <h5 class="card-title">Cadastro de Navios</h5>
+                    <form action="#" th:action="@{/adduser}" th:object="${modelNavio}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="nomeNavio" class="col-form-label">Nome Oficial do Navio</label>
+                                <input type="text" th:field="*{nomeNavio}" class="form-control" id="nomeNavio">
+                                <span th:if="${#fields.hasErrors('nomeNavio')}" th:errors="*{nomeNavio}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="nomeEmpresa" class="col-form-label">Nome da Empresa Detentora do Navio</label>
+                                <input type="text" th:field="*{nomeEmpresa}" class="form-control" id="nomeEmpresa">
+                                <span th:if="${#fields.hasErrors('nomeEmpresa')}" th:errors="*{nomeEmpresa}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="cnpjEmpresaProprietaria" class="col-form-label">CNPJ da Empresa Proprietária</label>
+                                <input type="text" th:field="*{cnpjEmpresaProprietaria}" class="form-control" id="cnpjEmpresaProprietaria">
+                                <span th:if="${#fields.hasErrors('cnpjEmpresaProprietaria')}" th:errors="*{cnpjEmpresaProprietaria}" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="form-group col-md-6">
+                                <label for="paisDeOrigem" class="col-form-label">País de Origem da Empresa Proprietária do Navio</label>
+                                <input type="text" th:field="*{paisDeOrigem}" class="form-control" id="paisDeOrigem">
+                                <span th:if="${#fields.hasErrors('paisDeOrigem')}" th:errors="*{paisDeOrigem}" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="form-group col-md-6">
+                                <label for="categoriaNavio" class="col-form-label">Categoria do Navio</label>
+                                <input type="text" th:field="*{categoriaNavio}" class="form-control" id="categoriaNavio">
+                                <span th:if="${#fields.hasErrors('categoriaNavio')}" th:errors="*{categoriaNavio}" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="form-group col-md-6">
+                                <label for="descrCategNavio" class="col-form-label">Descrição de Categoria do Navio</label>
+                                <input type="text" th:field="*{descrCategNavio}" class="form-control" id="descrCategNavio">
+                                <span th:if="${#fields.hasErrors('descrCategNavio')}" th:errors="*{descrCategNavio}" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="form-group col-md-6">
+                                <label for="origemNavio" class="col-form-label">País de Origem do Navio</label>
+                                <input type="text" th:field="*{origemNavio}" class="form-control" id="origemNavio">
+                                <span th:if="${#fields.hasErrors('origemNavio')}" th:errors="*{origemNavio}" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="form-group col-md-6">
+                                <label for="destinoNavio" class="col-form-label">País de Destino do Navio</label>
+                                <input type="text" th:field="*{destinoNavio}" class="form-control" id="destinoNavio">
+                                <span th:if="${#fields.hasErrors('destinoNavio')}" th:errors="*{destinoNavio}" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-5">
+                                <input type="submit" class="btn btn-primary" value="Cadastrar Navio">
+                            </div>
+                        </div>    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Users</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/shards.min.css">
+    </head>
+    <body>
+        
+        	<div class="card">
+        		<div class="card-body">
+                    <h5 class="card-title">Cadastro de Navios</h5>
+                        <table class="table table-striped table-responsive-md">
+                            <thead>
+                                <tr>
+                                    <th>Nome Oficial do Navio</th>
+                                    <th>Nome da Empresa Detentora do Navio</th>
+                                    <th>CNPJ da Empresa Proprietária</th>
+                                    <th>País de Origem da Empresa Proprietária do Navio</th>
+                                    <th>Categoria do Navio</th>
+                                    <th>Descrição de Categoria do Navio</th>
+                                    <th>País de Origem do Navio</th>
+                                    <th>País de Destino do Navio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="ModelNavio : ${model_navio}">
+                                    <td><a th:href="@{/edit/{id}(id=${ModelNavio.id})}" th:text="${ModelNavio.nomeNavio}"></a></td>
+                                    <td th:text="${ModelNavio.nomeEmpresa}"></td>
+                                    <td th:text="${ModelNavio.cnpjEmpresaProprietaria}"></td>
+                                    <td th:text="${ModelNavio.paisDeOrigem}"></td>
+                                    <td th:text="${ModelNavio.categoriaNavio}"></td>
+                                    <td th:text="${ModelNavio.descrCategNavio}"></td>
+                                    <td th:text="${ModelNavio.origemNavio}"></td>
+                                    <td th:text="${ModelNavio.destinoNavio}"></td>
+            <td><a th:href="@{/delete/{id}(id=${ModelNavio.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>      
+                </div>
+             <p class="my-5"><a href="/signup" class="btn btn-primary">Cadastrar novo Navio<i class="fas fa-user-plus ml-2"></i></a></p>
+
+    </body>
+</html>
